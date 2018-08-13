@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>CheckCustomerServlet</servlet-name>
+        <servlet-class>com.hand.servlet.CheckCustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckCustomerServlet</servlet-name>
+        <url-pattern>/checkCustomerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ShowFilmServlet</servlet-name>
+        <servlet-class>com.hand.servlet.ShowFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowFilmServlet</servlet-name>
+        <url-pattern>/showFilm</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addFilmwebServlet</servlet-name>
+        <servlet-class>com.hand.servlet.addFilmwebServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addFilmwebServlet</servlet-name>
+        <url-pattern>/addFilmweb</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addFilmServlet</servlet-name>
+        <servlet-class>com.hand.servlet.addFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addFilmServlet</servlet-name>
+        <url-pattern>/addFilm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editFilmServlet</servlet-name>
+        <servlet-class>com.hand.servlet.editFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editFilmServlet</servlet-name>
+        <url-pattern>/editFilm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editFilmDBServlet</servlet-name>
+        <servlet-class>com.hand.servlet.editFilmDBServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editFilmDBServlet</servlet-name>
+        <url-pattern>/editFilmDB</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteFilmDBServlet</servlet-name>
+        <servlet-class>com.hand.servlet.editFilmDBServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteFilmDBServlet</servlet-name>
+        <url-pattern>/deleteFilm</url-pattern>
+    </servlet-mapping>
+</web-app>
