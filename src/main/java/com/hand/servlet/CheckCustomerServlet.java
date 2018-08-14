@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Currency;
 
@@ -33,7 +34,7 @@ public class CheckCustomerServlet  extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String cname = request.getParameter("uname");
-
+        HttpSession session=request.getSession();
         RequestDispatcher rDispatcher = null;
         String forword = null;
         boolean flag;
@@ -54,7 +55,7 @@ public class CheckCustomerServlet  extends HttpServlet {
             }
             if (bool){
                 forword="/01/hello.jsp";
-                request.setAttribute("flag",true);
+                session.setAttribute("flag",true);
 
             }else {
                 forword = "/01/error.jsp";
