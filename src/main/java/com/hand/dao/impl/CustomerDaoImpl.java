@@ -98,7 +98,7 @@ public class CustomerDaoImpl implements CustomerDao{
 
     @Override
     public boolean deleteFilm(Connection conn, int id) throws SQLException {
-        String sql="delete from film where first_id="+id+";";
+        String sql="delete from film where film_id="+id+";";
         Statement statement=conn.createStatement();
         int rtn=statement.executeUpdate(sql);
         if(rtn>0){

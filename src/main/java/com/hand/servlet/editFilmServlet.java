@@ -23,6 +23,7 @@ public class editFilmServlet extends HttpServlet {
         forword="01/editFilm.jsp";
         String film_id= request.getParameter("aa");
         System.out.println(film_id);
+        request.setAttribute("film_id",film_id);
         rDispatcher = request.getRequestDispatcher(forword);
         rDispatcher.forward(request, response);
     }

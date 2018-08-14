@@ -26,7 +26,7 @@ public class deleteFilmService {
             System.out.println("成功加载MySQL驱动程序");
             conn = DriverManager.getConnection(url);
 
-            boolean bool=userDao.deleteFilm(conn,1);
+            boolean bool=userDao.deleteFilm(conn,id);
             return bool;
 
         }catch (Exception e){

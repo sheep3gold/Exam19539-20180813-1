@@ -36,11 +36,13 @@ public class CheckCustomerServlet  extends HttpServlet {
 
         RequestDispatcher rDispatcher = null;
         String forword = null;
+        boolean flag;
 
         if (cname == null ) {
             request.setAttribute("msg", "用户名为空！");
             rDispatcher = request.getRequestDispatcher("/02/error.jsp");
             rDispatcher.forward(request, response);
+
         } else {
             Customer customer=new Customer();
             customer.setName(cname);
@@ -52,6 +54,8 @@ public class CheckCustomerServlet  extends HttpServlet {
             }
             if (bool){
                 forword="/01/hello.jsp";
+                request.setAttribute("flag",true);
+
             }else {
                 forword = "/01/error.jsp";
             }

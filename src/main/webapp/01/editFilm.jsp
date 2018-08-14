@@ -18,6 +18,7 @@
         </tr>
         <tr>
             <td>title：</td>
+
             <td><input type="text" name="title"/></td>
         </tr>
         <tr>
@@ -38,6 +39,7 @@
                 </select>
             </td>
         </tr>
+        <tr><input type="hidden" value='<%=request.getAttribute("film_id")%>' name="film_id"></tr>
         <tr>
             <td colspan="2" align="centet">
                 <input type="submit" name="submit" onclick="return check(this)"/>

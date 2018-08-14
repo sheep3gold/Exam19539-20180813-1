@@ -24,8 +24,10 @@ public class deleteFilmServlet extends HttpServlet {
         String forword=null;
         RequestDispatcher rDispatcher = null;
         boolean bool=false;
+        String film_id= request.getParameter("dd");
+        System.out.println(film_id);
         try {
-             bool=deleteFilmService.deleteFilm(2);
+             bool=deleteFilmService.deleteFilm(Integer.parseInt(film_id));
         } catch (Exception e) {
             e.printStackTrace();
         }

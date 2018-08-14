@@ -56,7 +56,7 @@
 
     <servlet>
         <servlet-name>deleteFilmDBServlet</servlet-name>
-        <servlet-class>com.hand.servlet.editFilmDBServlet</servlet-class>
+        <servlet-class>com.hand.servlet.deleteFilmServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteFilmDBServlet</servlet-name>

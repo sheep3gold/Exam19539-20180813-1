@@ -15,7 +15,7 @@ import java.sql.DriverManager;
  */
 public class editFilmDBService {
     private CustomerDao userDao = new CustomerDaoImpl();
-    public boolean editFilm(Film film) throws Exception{
+    public boolean editFilm(Film film,int id) throws Exception{
         Connection conn = null;
 
         String url = "jdbc:mysql://localhost:3306/sakila?"
@@ -25,7 +25,7 @@ public class editFilmDBService {
             System.out.println("成功加载MySQL驱动程序");
             conn = DriverManager.getConnection(url);
 
-            boolean bool=userDao.editFilmDB(conn,1,film);
+            boolean bool=userDao.editFilmDB(conn,id,film);
             return bool;
 
         }catch (Exception e){

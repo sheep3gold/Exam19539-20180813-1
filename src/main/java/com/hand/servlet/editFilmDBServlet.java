@@ -28,13 +28,16 @@ public class editFilmDBServlet extends HttpServlet {
         String title=request.getParameter("title");
         String description=request.getParameter("description");
         String language=request.getParameter("language");
+        String film_id=request.getParameter("film_id");
         Film newFilm=new Film();
         newFilm.setTitle(title);
         newFilm.setDescription(description);
         newFilm.setLanguage(language);
 
+//        int film_id= (int) request.getAttribute("film_id");
+//        System.out.println(film_id);
         try {
-            editFilmDBService.editFilm(newFilm);
+            bool=editFilmDBService.editFilm(newFilm, Integer.parseInt(film_id));
         } catch (Exception e) {
             e.printStackTrace();
         }

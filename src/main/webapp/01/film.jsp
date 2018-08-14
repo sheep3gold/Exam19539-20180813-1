@@ -25,8 +25,8 @@
 %>
 <div>
     <p align="center" >所有的电影列表</p>
-    <form action="<%=request.getContextPath()%>/addFilmweb" method="post" name="addFilmweb">
-        <input type="submit" name="submit">
+    <form action="<%=request.getContextPath()%>/addFilmweb" method="post" name="addFilmweb" align="center">
+        <input type="submit" name="submit" value="增加">
     </form>
     <br>
 </div>
@@ -60,16 +60,17 @@
        <form action="<%=request.getContextPath()%>/editFilm" method="post" id ="formID" name="bb">
            <%--<%System.out.println(film.getFilm_id()) ;%>--%>
            <%--<% int id=film.getFilm_id(); %>--%>
-           <input type="hidden" value='1' name="aa">
+           <input type="hidden" value='<%=film.getFilm_id()%>' name="aa">
            <input type="submit" value="修改" >
            <%--<button onclick="getId(this.id)"></button>--%>
 
    </form>
    </td>
     <td>
-        <form action="<%=request.getContextPath()%>/deleteFilm" method="post" name="<%film.getFilm_id();%>">
-
-            <button id="bid" onclick="getId(this.id)" name="<%film.getFilm_id();%>">删除</button>
+        <form action="<%=request.getContextPath()%>/deleteFilm" method="post" name="cc">
+            <input type="hidden" value='<%=film.getFilm_id()%>' name="dd">
+            <input type="submit" value="删除" >
+            <%--<button id="bid" onclick="getId(this.id)" name="<%film.getFilm_id();%>">删除</button>--%>
         </form>
     </td>
     <%
