@@ -37,7 +37,7 @@ public class CheckCustomerServlet  extends HttpServlet {
         HttpSession session=request.getSession();
         RequestDispatcher rDispatcher = null;
         String forword = null;
-        boolean flag;
+//        boolean flag=false;
 
         if (cname == null ) {
             request.setAttribute("msg", "用户名为空！");
@@ -55,10 +55,11 @@ public class CheckCustomerServlet  extends HttpServlet {
             }
             if (bool){
                 forword="/01/hello.jsp";
-                session.setAttribute("flag",true);
+                session.getServletContext().setAttribute("flag","success");
 
             }else {
                 forword = "/01/error.jsp";
+                session.setAttribute("flag","error");
             }
             rDispatcher = request.getRequestDispatcher(forword);
             rDispatcher.forward(request, response);

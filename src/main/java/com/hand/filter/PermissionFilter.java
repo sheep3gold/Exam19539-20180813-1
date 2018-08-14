@@ -24,28 +24,30 @@ public class PermissionFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-//        chain.doFilter(req, resp);
+        String forword=null;
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
         HttpSession session = request.getSession();
-        boolean flag = (boolean) session.getAttribute("flag");
-        System.out.println("1");
+        String flag = "";
+        flag= (String) session.getServletContext().getAttribute("flag");
         String servletPath = request.getServletPath();
-        if (servletPath.equals("01/login.jsp")||servletPath.equals("01/index.jsp")||servletPath.equals("/login")) {
+        System.out.println(servletPath);
+        if (servletPath.equals("/01/login.jsp")||servletPath.equals("/01/index.jsp")||servletPath.equals("/")
+                ||servletPath.equals("/checkCustomerServlet")||servletPath.equals("/01/error.jsp")) {
             chain.doFilter(req, resp);
-        } else {
-            if (flag) {
+        }
+        else {
+            if (flag.equals("success")) {
                 chain.doFilter(req, resp);
             } else {
-                req.getRequestDispatcher("01/error.jsp").forward(req, resp);
+                forword="/01/error.jsp";
+                request.getRequestDispatcher(forword).forward(request, response);
             }
         }
     }
 
     @Override
     public void init(FilterConfig config) throws ServletException {
-        list.add("01/index.jsp");
-        list.add("01/login.jsp");
     }
 
 }

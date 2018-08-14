@@ -12,6 +12,6 @@
 </head>
 <body>
 error
-<a href="01/login.jsp">返回登陆界面</a>
+<a href="/01/login.jsp">返回登陆界面</a>
 </body>
 </html>
